@@ -90,7 +90,7 @@
       <TurnOffAssemblyGeneration>true</TurnOffAssemblyGeneration>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(OutDir)$(TargetFileName)" "$(_IDADIR)\plugins"</Command>
+      <Command>copy "$(OutDir)$(TargetFileName)" "%APPDATA%/Hex-Rays/IDA Pro/plugins"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +133,7 @@
     </Link>
     <PostBuildEvent>
       <Command>@if exist "%_TOOLS%\peupdate\peupdate.exe" ("%_TOOLS%\peupdate\peupdate.exe" -s -r -q "$(OutDir)$(TargetFileName)")
-copy "$(OutDir)$(TargetFileName)" "$(_IDADIR)\plugins"</Command>
+copy "$(OutDir)$(TargetFileName)" "%APPDATA%/Hex-Rays/IDA Pro/plugins"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
